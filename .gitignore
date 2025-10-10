@@ -674,7 +674,6 @@ docs/future_weeks
 
 .DS_Store
 src/activities/solutions/
-src/activities/pandas_wk2
 src/activities/database_wk3
 src/activities/quality_wk4
 src/activities/classes_wk5
