@@ -1,0 +1,62 @@
+# Basic project information
+[project]
+name = "comp0035-tutorials-soln"
+version = "2025.0.1"
+# Tells setuptools that the following packages need to be installed for this project. Version numbers can be specified, the following will just install the latest version.
+dependencies = [
+    "pandas",
+    "openpyxl",
+    "matplotlib",
+    "pytest",
+    "pytest-cov",
+    "pylint",
+    "flake8",
+    "ruff",
+    "pydantic",
+    "sqlmodel"
+]
+
+# Most students use setuptools, other options exist e.g. poetry
+[build-system]
+requires = ["setuptools >= 70.0"]
+build-backend = "setuptools.build_meta"
+
+# Setuptools configuration see https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html#setuptools-specific-configuration
+# Not strictly required as default 'src' is automatically recognised by setuptools
+[tool.setuptools]
+package-dir = { "" = "src" } # tells setuptools that the root of the packages is in src/.
+
+[tool.setuptools.packages.find]
+where = ["src"] # tells setuptools to go and look inside src/ to find packages.
+
+# Setuptools configuration for the data files see https://setuptools.pypa.io/en/stable/userguide/datafiles.html
+# [tool.setuptools.package-data]
+
+# Pytest configuration
+[tool.pytest.ini_options]
+minversion = "6.0"  # Optional, sets the minimum version of pytest required to run the test code
+addopts = "-ra -v"  # Optional, -ra sets a particular style of report output, -q reduces the verbosity (less detail) whereas -v increases it
+testpaths = [
+    "tests" # name of the directory from the project root where the test code is
+]
+
+# Pylint configuration
+[tool.pylint]
+max-line-length = 100 # Default is 79 (PEP8 standard length)
+good-names = ["i", "j", "df", "x", "y"]  # Prevents variable name warnings for these common names that don't meet PEP8
+
+# Flake8 configuration
+[tool.flake8]
+max-line-length = 100  # Default is 79 (PEP8 standard length)
+max-complexity = 1  # mccabe
+
+# Ruff configuration
+[tool.ruff]
+line-length = 100 # Default is 88
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.mccabe]
+max-complexity = 1
+

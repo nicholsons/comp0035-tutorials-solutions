@@ -1,0 +1,16 @@
+# requirements.txt allows pip or other tools to install the dependent packages
+# Not strictly needed for pip and setuptools with pyproject.toml
+# data manipulation and visualisation
+pandas
+matplotlib
+openpyxl
+# linting and static analysis
+pylint
+flake8
+ruff
+# Class activities in week 5
+pydantic
+sqlmodel
+# testing
+pytest
+pytest-cov
