@@ -1,0 +1,124 @@
+
+Number of missing values in the DataFrame:
+ 13
+
+Only the rows with missing values:
+       type  year country            host       start         end  \
+0   Summer  1960   Italy            Rome  18/09/1960  25/09/1960   
+17  summer  2028     USA     Los Angeles  15/08/2028  27/08/2028   
+31  winter  2026   Italy  Milano Cortina  06/03/2026  15/03/2026   
+
+                                disabilities_included  countries  events  \
+0                                       Spinal injury       23.0   113.0   
+17  Spinal injury, Amputee, Vision Impairment, Cer...        NaN     NaN   
+31  Spinal injury, Amputee, Vision Impairment, Cer...        NaN    79.0   
+
+    sports  participants_m  participants_f  participants  \
+0        8             NaN             NaN         209.0   
+17      22             NaN             NaN           NaN   
+31       6             NaN             NaN           NaN   
+
+                                           highlights  \
+0   First Games with a disability held in same ven...   
+17                                                NaN   
+31                                                NaN   
+
+                                               URL  
+0             https://www.paralympic.org/rome-1960  
+17              https://www.paralympic.org/la-2028  
+31  https://www.paralympic.org/milano-cortina-2026  
+
+Only the columns with missing values:
+     countries  events  participants_m  participants_f  participants  \
+0        23.0   113.0             NaN             NaN         209.0   
+1        21.0   143.0           195.0            71.0         266.0   
+2        29.0   188.0           578.0           196.0         774.0   
+3        43.0   188.0           654.0           268.0         922.0   
+4        40.0   448.0          1000.0           271.0        1271.0   
+5        43.0   590.0          1225.0           428.0        1653.0   
+6        58.0   975.0          1569.0           536.0        2105.0   
+7        60.0   733.0          2370.0           671.0        3041.0   
+8        83.0   489.0          2300.0           699.0        2999.0   
+9       104.0   519.0          2462.0           790.0        3252.0   
+10      123.0   550.0          2883.0           988.0        3871.0   
+11      135.0   519.0          2600.0          1149.0        3749.0   
+12      146.0   472.0          2585.0          1366.0        3951.0   
+13      164.0   530.0          2741.0          1502.0        4243.0   
+14      160.0   528.0          2657.0          1670.0        4327.0   
+15      162.0   539.0          2547.0          1846.0        4393.0   
+16      169.0   549.0          2551.0          2016.0        4567.0   
+17        NaN     NaN             NaN             NaN           NaN   
+18       16.0    53.0           161.0            37.0         198.0   
+19       18.0    64.0           229.0            70.0         299.0   
+20       21.0   107.0           325.0            94.0         419.0   
+21       22.0    97.0           300.0            77.0         377.0   
+22       24.0    79.0           288.0            77.0         365.0   
+23       31.0   133.0            39.0            90.0         129.0   
+24       31.0   122.0           440.0           122.0         562.0   
+25       36.0    92.0           328.0            87.0         415.0   
+26       38.0    58.0           375.0            99.0         474.0   
+27       44.0    64.0           381.0           121.0         502.0   
+28       45.0    72.0           411.0           129.0         540.0   
+29       49.0    80.0           430.0           133.0         563.0   
+30       46.0    78.0           422.0           136.0         558.0   
+31        NaN    79.0             NaN             NaN           NaN   
+
+                                           highlights  
+0   First Games with a disability held in same ven...  
+1                      Weightlifting added as a sport  
+2                         Lawn Bowls added as a sport  
+3   First quadraplegic competition added. Demonstr...  
+4   First use of specialised racing wheelchairs. V...  
+5   Sitting Volleyball added as a discipline. Even...  
+6   Football 7-a-side and Boccia added as sports. ...  
+7   Judo and Wheelchair Tennis added as sports. Co...  
+8        Event benchmark in organisational excellence  
+9   Equestrian added as a sport. Track cycling add...  
+10  Sailing and Wheelchair Rugby added as sports. ...  
+11                 Football 5-a-side added as a sport  
+12  Rowing added as sport. Cumulated TV audience o...  
+13  After an absence of 12 years intellectually di...  
+14  Para Canoe and Para Triathlon added as sports ...  
+15  Para badminton and Para taekwondo were added t...  
+16  First summer games in France. The first time t...  
+17                                                NaN  
+18                 Demonstration event: Sledge Racing  
+19        Demonstration event: Downhill Sledge Racing  
+20  Demonstration event at Olympics in Sarajevo: G...  
+21  Sit-Ski events introduced in the sports of Alp...  
+22  Biathlon added as a discipline. Demonstration ...  
+23                 Ice Sledge Hockey added as a sport  
+24  Demonstrated rising media interest in Paralymp...  
+25  Number of tickets on sale had to be augmented ...  
+26           Wheelchair Curling added as a new sport.  
+27      Ticket sales exceeded 230,000, the most ever.  
+28  316,200 tickets were sold, the most ever for P...  
+29  Record numbers of spectators (343,000), accred...  
+30  Record number of female Para athletes (136) to...  
+31                                                NaN  
+
+Distinct categorical values in the event 'type' column
+ ['Summer' 'summer' 'winter ' 'winter']
+
+Count of each distinct categorical value in the event 'type' column
+ type
+summer     17
+winter     13
+Summer      1
+winter      1
+Name: count, dtype: int64
+
+Distinct categorical values in the event 'disabilities_included' column
+ ['Spinal injury' 'Spinal injury, Amputee, Vision Impairment, Les Autres'
+ 'Spinal injury, Amputee, Vision Impairment, Cerebral Palsy, Les Autres'
+ 'Spinal injury, Amputee, Vision Impairment, Cerebral Palsy, Les Autres, Intellectual Disability'
+ 'Spinal injury, Amputee, Vision Impairment, Cerebral']
+
+Count of each distinct categorical value in the event 'type' column
+ disabilities_included
+Spinal injury, Amputee, Vision Impairment, Cerebral Palsy, Les Autres                             15
+Spinal injury, Amputee, Vision Impairment, Cerebral Palsy, Les Autres, Intellectual Disability     7
+Spinal injury                                                                                      5
+Spinal injury, Amputee, Vision Impairment, Cerebral                                                3
+Spinal injury, Amputee, Vision Impairment, Les Autres                                              2
+Name: count, dtype: int64

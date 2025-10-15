@@ -1,0 +1,251 @@
+
+Columns after dropping:
+ Index(['type', 'year', 'country', 'host', 'start', 'end', 'countries',
+       'events', 'sports', 'participants_m', 'participants_f', 'participants'],
+      dtype='object')
+
+Rows with missing values after columns dropped:
+       type  year country            host       start         end  countries  \
+0   Summer  1960   Italy            Rome  18/09/1960  25/09/1960       23.0   
+17  summer  2028     USA     Los Angeles  15/08/2028  27/08/2028        NaN   
+31  winter  2026   Italy  Milano Cortina  06/03/2026  15/03/2026        NaN   
+
+    events  sports  participants_m  participants_f  participants  
+0    113.0       8             NaN             NaN         209.0  
+17     NaN      22             NaN             NaN           NaN  
+31    79.0       6             NaN             NaN           NaN  
+
+Distinct categorical values in the event 'type' column before change
+ ['Summer' 'summer' 'winter ' 'winter']
+
+Distinct categorical values in the event 'type' column after changes
+ ['summer' 'winter']
+
+Data types:
+ type               object
+year                int64
+country            object
+host               object
+start              object
+end                object
+countries         float64
+events            float64
+sports              int64
+participants_m    float64
+participants_f    float64
+participants      float64
+dtype: object
+
+Values in start and end before change: 
+          start         end
+0   18/09/1960  25/09/1960
+1   08/11/1964  12/11/1964
+2   05/11/1968  14/11/1968
+3   02/08/1972  11/08/1972
+4   04/08/1976  12/08/1976
+5   22/06/1980  01/07/1980
+6   17/06/1984  01/08/1984
+7   16/10/1988  25/10/1988
+8   05/09/1992  16/09/1992
+9   16/08/1996  25/08/1996
+10  23/10/2000  31/10/2000
+11  23/09/2004  04/10/2004
+12  06/09/2008  17/09/2008
+13  29/08/2012  09/09/2012
+14  07/09/2016  18/09/2016
+15  24/08/2021  05/09/2021
+16  28/08/2024  08/09/2024
+17  15/08/2028  27/08/2028
+18  21/02/1976  28/02/1976
+19  02/02/1980  08/02/1980
+20  15/01/1984  21/01/1984
+21  18/01/1988  25/01/1988
+22  25/03/1992  02/04/1992
+23  10/03/1994  19/03/1994
+24  07/03/1998  16/03/1998
+25  09/03/2002  18/03/2002
+26  12/03/2006  21/03/2006
+27  12/03/2010  21/03/2010
+28  07/03/2014  16/03/2014
+29  09/03/2018  18/03/2018
+30  04/03/2022  13/03/2022
+31  06/03/2026  15/03/2026
+
+Data types after float to int and string to date changes:
+ type                      object
+year                       Int64
+country                   object
+host                      object
+start             datetime64[ns]
+end               datetime64[ns]
+countries                  Int64
+events                     Int64
+sports                     Int64
+participants_m             Int64
+participants_f             Int64
+participants               Int64
+dtype: object
+
+Data types after object to string to date changes:
+ type              string[python]
+year                       Int64
+country           string[python]
+host              string[python]
+start             datetime64[ns]
+end               datetime64[ns]
+countries                  Int64
+events                     Int64
+sports                     Int64
+participants_m             Int64
+participants_f             Int64
+participants               Int64
+dtype: object
+
+New duration column:
+ 0      7
+1      4
+2      9
+3      9
+4      8
+5      9
+6     45
+7      9
+8     11
+9      9
+10     8
+11    11
+12    11
+13    11
+14    11
+15    12
+16    11
+17    12
+18     7
+19     6
+20     6
+21     7
+22     8
+23     9
+24     9
+25     9
+26     9
+27     9
+28     9
+29     9
+30     9
+31     9
+Name: duration, dtype: Int64
+
+All columns after adding duration:
+ Index(['type', 'year', 'country', 'host', 'start', 'end', 'duration',
+       'countries', 'events', 'sports', 'participants_m', 'participants_f',
+       'participants'],
+      dtype='object')
+
+Only the rows with missing values:
+ Empty DataFrame
+Columns: [country, Code, Name]
+Index: []
+
+Final dataframe contents:
+       type  year                     country                       host  \
+0   summer  1960                       Italy                       Rome   
+1   summer  1964                       Japan                      Tokyo   
+2   summer  1968                      Israel                   Tel Aviv   
+3   summer  1972                     Germany                 Heidelberg   
+4   summer  1976                      Canada                    Toronto   
+5   summer  1980                 Netherlands                     Arnhem   
+6   summer  1984               Great Britain  Stoke Mandeville New York   
+7   summer  1988           Republic of Korea                      Seoul   
+8   summer  1992                       Spain                  Barcelona   
+9   summer  1996    United States of America                    Atlanta   
+10  summer  2000                   Australia                     Sydney   
+11  summer  2004                      Greece                     Athens   
+12  summer  2008  People's Republic of China                    Beijing   
+13  summer  2012               Great Britain                     London   
+14  summer  2016                      Brazil                        Rio   
+15  summer  2020                       Japan                      Tokyo   
+16  summer  2024                      France                      Paris   
+17  summer  2028    United States of America                Los Angeles   
+18  winter  1976                      Sweden               Ornskoldsvik   
+19  winter  1980                      Norway                      Geilo   
+20  winter  1984                     Austria                  Innsbruck   
+21  winter  1988                     Austria                  Innsbruck   
+22  winter  1992                      France         Tignes-Albertville   
+23  winter  1994                      Norway                Lillehammer   
+24  winter  1998                       Japan                     Nagano   
+25  winter  2002    United States of America             Salt Lake City   
+26  winter  2006                       Italy                     Torino   
+27  winter  2010                      Canada                  Vancouver   
+28  winter  2014          Russian Federation                      Sochi   
+29  winter  2018           Republic of Korea                PyeongChang   
+30  winter  2022  People's Republic of China                    Beijing   
+31  winter  2026                       Italy             Milano Cortina   
+
+        start        end  duration  countries  events  sports  participants_m  \
+0  1960-09-18 1960-09-25         7         23     113       8            <NA>   
+1  1964-11-08 1964-11-12         4         21     143       9             195   
+2  1968-11-05 1968-11-14         9         29     188      10             578   
+3  1972-08-02 1972-08-11         9         43     188      10             654   
+4  1976-08-04 1976-08-12         8         40     448      13            1000   
+5  1980-06-22 1980-07-01         9         43     590      13            1225   
+6  1984-06-17 1984-08-01        45         58     975      18            1569   
+7  1988-10-16 1988-10-25         9         60     733      18            2370   
+8  1992-09-05 1992-09-16        11         83     489      16            2300   
+9  1996-08-16 1996-08-25         9        104     519      19            2462   
+10 2000-10-23 2000-10-31         8        123     550      19            2883   
+11 2004-09-23 2004-10-04        11        135     519      19            2600   
+12 2008-09-06 2008-09-17        11        146     472      20            2585   
+13 2012-08-29 2012-09-09        11        164     530      20            2741   
+14 2016-09-07 2016-09-18        11        160     528      22            2657   
+15 2021-08-24 2021-09-05        12        162     539      22            2547   
+16 2024-08-28 2024-09-08        11        169     549      22            2551   
+17 2028-08-15 2028-08-27        12       <NA>    <NA>      22            <NA>   
+18 1976-02-21 1976-02-28         7         16      53       2             161   
+19 1980-02-02 1980-02-08         6         18      64       2             229   
+20 1984-01-15 1984-01-21         6         21     107       3             325   
+21 1988-01-18 1988-01-25         7         22      97       4             300   
+22 1992-03-25 1992-04-02         8         24      79       3             288   
+23 1994-03-10 1994-03-19         9         31     133       5              39   
+24 1998-03-07 1998-03-16         9         31     122       5             440   
+25 2002-03-09 2002-03-18         9         36      92       4             328   
+26 2006-03-12 2006-03-21         9         38      58       5             375   
+27 2010-03-12 2010-03-21         9         44      64       5             381   
+28 2014-03-07 2014-03-16         9         45      72       6             411   
+29 2018-03-09 2018-03-18         9         49      80       6             430   
+30 2022-03-04 2022-03-13         9         46      78       6             422   
+31 2026-03-06 2026-03-15         9       <NA>      79       6            <NA>   
+
+    participants_f  participants Code  
+0             <NA>           209  ITA  
+1               71           266  JPN  
+2              196           774  ISR  
+3              268           922  GER  
+4              271          1271  CAN  
+5              428          1653  NED  
+6              536          2105  GBR  
+7              671          3041  KOR  
+8              699          2999  ESP  
+9              790          3252  USA  
+10             988          3871  AUS  
+11            1149          3749  GRE  
+12            1366          3951  CHN  
+13            1502          4243  GBR  
+14            1670          4327  BRA  
+15            1846          4393  JPN  
+16            2016          4567  FRA  
+17            <NA>          <NA>  USA  
+18              37           198  SWE  
+19              70           299  NOR  
+20              94           419  AUT  
+21              77           377  AUT  
+22              77           365  FRA  
+23              90           129  NOR  
+24             122           562  JPN  
+25              87           415  USA  
+26              99           474  ITA  
+27             121           502  CAN  
+28             129           540  RUS  
+29             133           563  KOR  
+30             136           558  CHN  
+31            <NA>          <NA>  ITA  
