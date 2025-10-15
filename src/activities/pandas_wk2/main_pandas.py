@@ -23,6 +23,11 @@ def main():
     # Temporarily redirect the output from the terminal to a file
     original_stdout = sys.stdout
 
+    # Check output directory created
+    output_dir = Path(__file__).parent.joinpath("output")
+    if not output_dir.exists():
+        output_dir.mkdir(parents=True)
+
     # Describe
     describe_txt = Path(__file__).parent.joinpath("output", "df_describe.txt")
     with open(describe_txt, "w") as f:
