@@ -1,0 +1,26 @@
+""" Worked example to the week 3 database core activities. """
+import sqlite3
+
+
+def create_db(schema_path, db_path):
+    """ Create a SQLite database using the provided schema file.
+
+    Args:
+        schema_path (str): Path to the SQL schema file.
+        db_path (str): Path where the SQLite database will be created.
+    """
+
+    # Create a connection
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+
+    # Read the SQL schema file
+    with open(schema_path, 'r') as f:
+        schema_sql = f.read()
+
+    # Execute the schema SQL
+    cursor.executescript(schema_sql)
+
+    # Commit and close the connection
+    conn.commit()
+    conn.close()
