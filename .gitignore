@@ -674,9 +674,9 @@ docs/future_weeks
 
 .DS_Store
 src/activities/solutions/
-src/activities/database_wk3
-src/activities/quality_wk4
+src/activities/quality_wk3
 src/activities/classes_wk5
 src/activities/database2_wk8
+src/activities/temp
 tests/test_playing_cards_solution.py
 tests/conftest_solutions.py
