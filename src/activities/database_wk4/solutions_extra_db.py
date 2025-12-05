@@ -37,6 +37,7 @@ def insert_data(db_path, df):
     cursor.execute('PRAGMA foreign_keys = ON;')
 
     # Define the SQL insert statements for the parameterised queries
+    test_sql = 'INSERT INTO student (...) VALUES (?, ?)'
     student_sql = 'INSERT INTO student (student_name, student_email) VALUES (?, ?)'
     teacher_sql = 'INSERT INTO teacher (teacher_name, teacher_email) VALUES (?, ?)'
     course_sql = 'INSERT INTO course (course_name, course_code, course_schedule, course_location) VALUES (?, ?, ?, ?)'
