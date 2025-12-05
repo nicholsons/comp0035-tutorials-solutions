@@ -45,6 +45,8 @@ testpaths = [
 max-line-length = 100 # Default is 79 (PEP8 standard length)
 good-names = ["i", "j", "df", "x", "y"]  # Prevents variable name warnings for these common names that don't meet PEP8
 
+[tool.coverage.run]
+omit = ["*/__init__.py"]
 
 # Ruff configuration
 [tool.ruff]
