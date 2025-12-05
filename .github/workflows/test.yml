@@ -1,0 +1,33 @@
+name: Test Python app (linting removed)
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.12"
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8 pylint pytest pytest-cov
+        pip install -e .        
+    - name: Test 'playing_cards' with pytest and report coverage to terminal
+      run: |
+        pytest --cov=playing_cards --cov-report term-missing tests/playing_cards
+    - name: Test 'para_app' with pytest and report coverage to terminal
+      run: |
+        pytest --cov=para_app --cov-report term-missing tests/paralympics
